@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "520037154879",
+    "project_id": "nofakenews-301c5",
+    "storage_bucket": "nofakenews-301c5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:520037154879:android:5360431f5ab7c9abb2388a",
+        "android_client_info": {
+          "package_name": "com.example.flutter_end_sem"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkJvXODxjheXtfEYeWDDvx455VuOoo9wU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

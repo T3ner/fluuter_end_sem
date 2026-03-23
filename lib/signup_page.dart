@@ -1,5 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_end_sem/dbConn.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
@@ -16,7 +18,7 @@ class _SignupPageState extends State<SignupPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: const Color.fromARGB(0, 255, 255, 255),
         elevation: 0,
         iconTheme: const IconThemeData(color: Colors.white24),
       ),
@@ -63,6 +65,7 @@ class _SignupPageState extends State<SignupPage> {
                     color: Colors.redAccent,
                     size: 18,
                   ),
+                  
                   enabledBorder: UnderlineInputBorder(
                     borderSide: BorderSide(color: Colors.white10),
                   ),
@@ -115,7 +118,13 @@ class _SignupPageState extends State<SignupPage> {
                     foregroundColor: Colors.white,
                     shape: const RoundedRectangleBorder(),
                   ),
-                  onPressed: () => Navigator.pop(context),
+                  onPressed: () async {
+                  User? user = await Dbconn().signUpWithEmailAndPassword(_emailController.text ,_passwordController.text);
+                  if(user != null){
+                    Navigator.pop(context);
+                  }else{
+                    
+                  }},
                   child: const Text(
                     "CREATE PROFILE",
                     style: TextStyle(
@@ -123,6 +132,7 @@ class _SignupPageState extends State<SignupPage> {
                       letterSpacing: 1.5,
                     ),
                   ),
+                  
                 ),
               ),
             ],
