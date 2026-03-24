@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_end_sem/Pages/home_page.dart';
+import 'package:flutter_end_sem/Pages/profile.dart';
 import 'package:flutter_end_sem/dbConn.dart';
 import 'package:flutter_end_sem/Pages/signup_page.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -27,8 +28,7 @@ class MainApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: SignupPage()
+        home: ProfilePage()
     );
   }
 }
-
