@@ -42,7 +42,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions web = FirebaseOptions(
     apiKey: 'AIzaSyCON-uStQHa6gm0X6K15VkhwmlZHPqlnlo',
-    appId: '1:520037154879:web:e035a01c8f0196c9b2388a',
+    appId: '1:520037154879:web:83e41196b339780bb2388a',
     messagingSenderId: '520037154879',
     projectId: 'nofakenews-301c5',
     authDomain: 'nofakenews-301c5.firebaseapp.com',
@@ -51,7 +51,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyAkJvXODxjheXtfEYeWDDvx455VuOoo9wU',
-    appId: '1:520037154879:android:5360431f5ab7c9abb2388a',
+    appId: '1:520037154879:android:e7edf55fbb8c375cb2388a',
     messagingSenderId: '520037154879',
     projectId: 'nofakenews-301c5',
     storageBucket: 'nofakenews-301c5.firebasestorage.app',
@@ -59,25 +59,25 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyDkytySxIjgHxjIHbWk7HYpT8aHdUl3mJg',
-    appId: '1:520037154879:ios:79d0d436ced0dcd4b2388a',
+    appId: '1:520037154879:ios:67c893a29cbea63cb2388a',
     messagingSenderId: '520037154879',
     projectId: 'nofakenews-301c5',
     storageBucket: 'nofakenews-301c5.firebasestorage.app',
-    iosBundleId: 'com.example.flutterEndSem',
+    iosBundleId: 'com.example.veritasAi',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyDkytySxIjgHxjIHbWk7HYpT8aHdUl3mJg',
-    appId: '1:520037154879:ios:79d0d436ced0dcd4b2388a',
+    appId: '1:520037154879:ios:67c893a29cbea63cb2388a',
     messagingSenderId: '520037154879',
     projectId: 'nofakenews-301c5',
     storageBucket: 'nofakenews-301c5.firebasestorage.app',
-    iosBundleId: 'com.example.flutterEndSem',
+    iosBundleId: 'com.example.veritasAi',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
     apiKey: 'AIzaSyCON-uStQHa6gm0X6K15VkhwmlZHPqlnlo',
-    appId: '1:520037154879:web:83e41196b339780bb2388a',
+    appId: '1:520037154879:web:922094e96df9b61db2388a',
     messagingSenderId: '520037154879',
     projectId: 'nofakenews-301c5',
     authDomain: 'nofakenews-301c5.firebaseapp.com',
