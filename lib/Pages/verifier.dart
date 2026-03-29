@@ -1,28 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_end_sem/Pages/home_page.dart';
+import 'package:flutter_end_sem/Pages/profile.dart';
 
-class VerifierPage extends StatefulWidget{
+class VerifierPage extends StatefulWidget {
   @override
   State<VerifierPage> createState() => _VerifierPageState();
 }
 
-class _VerifierPageState extends State<VerifierPage>{
+class _VerifierPageState extends State<VerifierPage> {
+  int _currentIndex = 2; 
+
+  final List<Widget> _pages = [
+    ProfilePage(), 
+    HomePage(),    
+    const Center(child: Text("Search / Verify Logic Here")), 
+  ];
+
   @override
-  Widget build(BuildContext context){
-    return MaterialApp(
-      home: DefaultTabController(length: 3, 
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text('News Checker'),
-          backgroundColor: Colors.red,
-          bottom: const TabBar(
-            tabs: [
-              Tab(icon: Icon(Icons.person, color: Colors.black87)),
-              Tab(icon: Icon(Icons.home, color: Colors.black87)),
-              Tab(icon: Icon(Icons.search, color: Colors.black87))
-            ]),
-        ),
-        )
-      ),
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: _pages[_currentIndex],
     );
   }
 }

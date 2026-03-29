@@ -1,7 +1,6 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_end_sem/dbConn.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
@@ -14,11 +13,35 @@ class _SignupPageState extends State<SignupPage> {
   final _passwordController = TextEditingController();
   final _nameController = TextEditingController();
 
+  Future<void> _signUp() async {
+    if (_emailController.text.isEmpty || _passwordController.text.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("Please fill in all registry fields")),
+      );
+      return;
+    }
+
+    try {
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: _emailController.text.trim(),
+        password: _passwordController.text.trim(),
+      );
+      Navigator.pop(context);
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("Registry Entry Created Successfully")),
+      );
+    } on FirebaseAuthException catch (e) {
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text("Registry Error: ${e.message}")));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(0, 255, 255, 255),
+        backgroundColor: Colors.transparent,
         elevation: 0,
         iconTheme: const IconThemeData(color: Colors.white24),
       ),
@@ -65,7 +88,6 @@ class _SignupPageState extends State<SignupPage> {
                     color: Colors.redAccent,
                     size: 18,
                   ),
-                  
                   enabledBorder: UnderlineInputBorder(
                     borderSide: BorderSide(color: Colors.white10),
                   ),
@@ -73,7 +95,7 @@ class _SignupPageState extends State<SignupPage> {
               ),
               const SizedBox(height: 25),
               const Text(
-                "REGISTRY EMAIL",
+                "REGISTERED EMAIL",
                 style: TextStyle(fontSize: 9, color: Colors.white38),
               ),
               TextField(
@@ -118,13 +140,7 @@ class _SignupPageState extends State<SignupPage> {
                     foregroundColor: Colors.white,
                     shape: const RoundedRectangleBorder(),
                   ),
-                  onPressed: () async {
-                  User? user = await Dbconn().signUpWithEmailAndPassword(_emailController.text ,_passwordController.text);
-                  if(user != null){
-                    Navigator.pop(context);
-                  }else{
-                    
-                  }},
+                  onPressed: _signUp,
                   child: const Text(
                     "CREATE PROFILE",
                     style: TextStyle(
@@ -132,7 +148,6 @@ class _SignupPageState extends State<SignupPage> {
                       letterSpacing: 1.5,
                     ),
                   ),
-                  
                 ),
               ),
             ],
